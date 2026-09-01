@@ -4,21 +4,21 @@ const express = require("express");
 
 const app = express();
 
-const middlewere1 = (req, res, next) => {
-    console.log("1");
-    next();
-    console.log("2");
-};
-
 const middlewere2 = (req, res, next) => {
     console.log("3");
     next();
     console.log("4");
 };
 
+const middlewere1 = (req, res, next) => {
+    console.log("1");
+    next();
+    console.log("2");
+};
+
 //use a middlewere
-app.use(middlewere1);
 app.use(middlewere2);
+app.use(middlewere1);
 
 //Home page
 
